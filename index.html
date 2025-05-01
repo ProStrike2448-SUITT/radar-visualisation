@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Radar Visualization</title>
+
+    <script
+      src="https://cdn.plot.ly/plotly-3.0.1.min.js"
+      charset="utf-8"
+    ></script>
+  </head>
+  <body>
+    <form id="params">
+      <fieldset>
+        <legend>Параметри емуляції</legend>
+
+        <label for="measurementsPerRotation">Вимірювань за оберт:</label>
+        <input
+          type="number"
+          id="measurementsPerRotation"
+          name="measurementsPerRotation"
+          value="360"
+          min="1"
+          step="1"
+          required
+        /><br />
+
+        <label for="rotationSpeed">Обертів за хвилину:</label>
+        <input
+          type="number"
+          id="rotationSpeed"
+          name="rotationSpeed"
+          value="60"
+          min="1"
+          step="1"
+          required
+        /><br />
+
+        <label for="targetSpeed">Швидкість цілі:</label>
+        <input
+          type="number"
+          id="targetSpeed"
+          name="targetSpeed"
+          value="100"
+          min="0"
+          step="1"
+          required
+        />
+        <span>км/год</span><br />
+
+        <input type="submit" value="Зберегти" />
+      </fieldset>
+    </form>
+
+    <div id="radar"></div>
+    <script src="radar.js"></script>
+  </body>
+</html>
